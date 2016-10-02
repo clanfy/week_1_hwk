@@ -37,8 +37,8 @@ def find_pet_by_name( shop, name )
   for pet in shop[:pets] do
     if pet[:name] == name
       return pet 
-    else 
-      return nil
+    # else 
+    #   return nil
     end
   end
 end
@@ -66,6 +66,11 @@ def customer_can_afford_pet( customer, new_pet )
     false
   end
 end 
+
+# def sell_pet_to_customer( shop, pet, customer )
+
+# end  
+
 
 
 

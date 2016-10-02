@@ -1,4 +1,3 @@
-# require("pry-byebug")
 
 def pet_shop_name ( shop )
   return shop[:name]
@@ -28,28 +27,36 @@ end
 
 def pets_by_breed( shop, breed )
   pet_array = []
-  for pet in shop[:pets]
+  for pet in shop[:pets] do
     pet_array << pet if pet[:breed] == breed
   end
   return pet_array
 end
 
-# def get_spaceships( universe )
-#   spaceships = []
-#   for spaceship in universe[:spaceships]
-#     binding.pry
-#     spaceships << spaceship
-#   end
+def find_pet_by_name( shop, name )
+  for pet in shop[:pets] do
+    if pet[:name] == name
+      return pet 
+    else 
+      return nil
+    end
+  end
+end
 
-#   return spaceships
+# def remove_pet_by_name ( shop, name )
 
-# def no_friends(people)
-#   result = []
-#   for person in people
-#     result << person if person[:friends].empty?
-#   end
-#   return result
 # end
 
+def add_pet_to_stock( shop, new_pet )
+ shop[:pets] << new_pet
+end
+
+def customer_pet_count( customer )
+  return customer[:pets].count
+end
+
+def add_pet_to_customer( customer, new_pet )
+  customer[:pets] << new_pet
+end
 
 
